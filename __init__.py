@@ -8,6 +8,8 @@ from .general.scatter3 import scatter3
 from .general.edge_flaps import edge_flaps
 from .general.adjacency_list_edge_face import adjacency_list_edge_face
 from .general.adjacency_edge_face import adjacency_edge_face
+from .general.outline import outline
+from .general.boundary_vertices import boundary_vertices
 
 from .differentiable.face_areas import face_areas
 from .differentiable.face_normals import face_normals
@@ -20,3 +22,5 @@ from .differentiable.dihedral_angles import dihedral_angles
 from .differentiable.dihedral_angles import dihedral_angles_from_normals
 from .differentiable.tip_angles import tip_angles
 from .differentiable.tip_angles import tip_angles_intrinsic
+from .differentiable.angle_defect import angle_defect
+from .differentiable.angle_defect import angle_defect_intrinsic
