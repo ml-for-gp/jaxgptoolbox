@@ -13,9 +13,9 @@ def dihedral_angles(V, F):
 	
 	Outputs:
 	dihedral_angles: (|E|,) numpy array of dihedral angles (0 ~ pi)
-    E: (|E|,2) numpy array of edge indices
+	E: (|E|,2) numpy array of edge indices
 	'''
-    # TODO: double check whether this is differentiable
+	# TODO: double check whether this is differentiable
 
 	FN = face_normals(V,F)
 	E2F, E = adjacency_list_edge_face(F)
@@ -30,11 +30,11 @@ def dihedral_angles_from_normals(N, E2F):
 	Inputs:
 	N: (|F|,3) numpy ndarray of unit face normals
 	E2F: (|E|,|F|) scipy sparse matrix scipy sparse matrix of adjacency
-	     information between edges and faces, for example as produced by
-	     adjacency_list_edge_face
+		 information between edges and faces, for example as produced by
+		 adjacency_list_edge_face
 	
 	Outputs:
-	dihedral_angles: (|F|,) numpy array of dihedral angles at each edge 
+	dihedral_angles: (|E|,) numpy array of dihedral angles at each edge 
 	'''
 
 	dotN = dotrow(N[E2F[:,0],:], N[E2F[:,1],:]).clip(-1,1)
