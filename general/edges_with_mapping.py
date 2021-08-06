@@ -7,7 +7,11 @@ def edges_with_mapping(F):
 	Input:
 	  F (|F|,3) numpy array of face indices
 	Output:
-	  E (|E|,2) numpy array of edge indices
+	  uE (|E|,2) numpy array of edge indices
+    F2E (|F|,3) numpy array mapping from halfedges to unique edges.
+                our halfedge convention identifies each halfedge by the index
+                of the face and the opposite vertex within the face:
+                (face, opposite vertex)
 	'''
   F12 = F[:, np.array([1,2])]
   F20 = F[:, np.array([2,0])]
