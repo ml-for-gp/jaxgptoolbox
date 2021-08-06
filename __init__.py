@@ -12,7 +12,11 @@ from .general.adjacency_edge_face import adjacency_edge_face
 from .differentiable.face_areas import face_areas
 from .differentiable.face_normals import face_normals
 from .differentiable.normalizerow import normalizerow
+from .differentiable.normrow import normrow
 from .differentiable.dotrow import dotrow
 from .differentiable.halfedge_lengths import halfedge_lengths
+from .differentiable.halfedge_lengths import halfedge_lengths_squared
 from .differentiable.dihedral_angles import dihedral_angles
 from .differentiable.dihedral_angles import dihedral_angles_from_normals
+from .differentiable.tip_angles import tip_angles
+from .differentiable.tip_angles import tip_angles_intrinsic

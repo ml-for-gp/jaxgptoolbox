@@ -6,11 +6,11 @@ def dotrow(X,Y):
 
 	Inputs:
 	X: (n,m) numpy ndarray
-	Y: (n,m) numpy
+	Y: (n,m) numpy ndarray
 	
 	Outputs:
 	d: (n,) numpy array of rowwise dot product of X and Y
 	'''
 
 	return np.sum(X * Y, axis = 1)
-	
+

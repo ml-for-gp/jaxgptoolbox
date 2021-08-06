@@ -1,14 +1,15 @@
 import jax.numpy as np
+from .normrow import normrow
 
 def normalizerow(X):
 	"""
 	NORMALIZEROW normalizes the l2-norm of each row in a np array 
 
 	Input:
-	  X: n-by-m np array
+	  X: (n,m) numpy array
 	Output:
-	  X_normalized: n-by-m row normalized np array
+	  X_normalized: (n,m) row normalized numpy array
 	"""
-	l2Norm = np.sqrt((X * X).sum(axis=1))
+	l2Norm = normrow(X)
 	X_normalized = X / (l2Norm.reshape(X.shape[0],1))
 	return X_normalized
