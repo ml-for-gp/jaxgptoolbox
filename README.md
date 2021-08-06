@@ -14,6 +14,9 @@ This library depends on:
 * [scipy](https://github.com/scipy/scipy)
 * [jax](https://github.com/google/jax)
 
+If you want to use the plotting functions, they depend on
+* [matplotlib](https://github.com/matplotlib/matplotlib)
+
 Make sure to install all dependencies (for example, with [conda](https://docs.conda.io/projects/conda/en/latest/index.html))
 before using the library.
 

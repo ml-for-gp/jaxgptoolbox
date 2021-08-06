@@ -6,11 +6,11 @@ def face_normals(V, F):
 	FACENORMALS computes unit face normal of a triangle mesh
 
 	Inputs:
-	V: n-by-3 numpy ndarray of vertex positions
-	F: m-by-3 numpy ndarray of face indices
+	V: (|V|,3) numpy ndarray of vertex positions
+	F: (|F|,3) numpy ndarray of face indices
 	
 	Outputs:
-	FN_normalized: m-by-3 numpy ndarray of unit face normal
+	FN_normalized: (|F|,3) numpy ndarray of unit face normal
 	'''
 	vec1 = V[F[:,1],:] - V[F[:,0],:]
 	vec2 = V[F[:,2],:] - V[F[:,0],:]

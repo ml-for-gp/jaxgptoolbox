@@ -9,3 +9,7 @@ from .general.scatter3 import scatter3
 from .differentiable.face_areas import face_areas
 from .differentiable.face_normals import face_normals
 from .differentiable.normalizerow import normalizerow
+from .differentiable.dotrow import dotrow
+from .differentiable.halfedge_lengths import halfedge_lengths
+from .differentiable.dihedral_angles import dihedral_angles
+from .differentiable.dihedral_angles import dihedral_angles_from_normals
