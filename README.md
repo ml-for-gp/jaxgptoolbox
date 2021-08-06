@@ -5,6 +5,9 @@ This is a collection of basic geometry processing functions, constructed to work
 import jaxgptoolbox as jgp
 V,F = jgp.readOBJ('path_to_OBJ')
 jgp.plotMesh(V,F)
+
+import matplotlib.pyplot as plt
+plt.show()
 ```
 
 ## Dependencies
