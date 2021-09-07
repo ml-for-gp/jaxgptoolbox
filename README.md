@@ -20,6 +20,9 @@ This library depends on:
 If you want to use the plotting functions, they depend on
 * [matplotlib](https://github.com/matplotlib/matplotlib)
 
+Some functions in the `external` folder depend on
+* [libigl](https://libigl.github.io/libigl-python-bindings/)
+
 Make sure to install all dependencies (for example, with [conda](https://docs.conda.io/projects/conda/en/latest/index.html))
 before using the library.
 

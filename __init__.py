@@ -13,6 +13,7 @@ from .general.boundary_vertices import boundary_vertices
 
 from .differentiable.face_areas import face_areas
 from .differentiable.face_normals import face_normals
+from .differentiable.normalize_unit_box import normalize_unit_box
 from .differentiable.normalizerow import normalizerow
 from .differentiable.normrow import normrow
 from .differentiable.dotrow import dotrow
@@ -24,3 +25,5 @@ from .differentiable.tip_angles import tip_angles
 from .differentiable.tip_angles import tip_angles_intrinsic
 from .differentiable.angle_defect import angle_defect
 from .differentiable.angle_defect import angle_defect_intrinsic
+
+from .external.signed_distance import signed_distance
