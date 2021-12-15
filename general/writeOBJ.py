@@ -1,4 +1,5 @@
-import jax.numpy as np
+import jax.numpy as jnp
+import numpy as np
 
 def writeOBJ(fileName,V,F):
 	"""
@@ -12,6 +13,8 @@ def writeOBJ(fileName,V,F):
 			an .obj file
     """
 	f = open(fileName, 'w')
+	V = np.array(V)
+	F = np.array(F)
 	for ii in range(V.shape[0]):
 		string = 'v ' + str(V[ii,0]) + ' ' + str(V[ii,1]) + ' ' + str(V[ii,2]) + '\n'
 		f.write(string)

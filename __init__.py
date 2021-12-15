@@ -1,4 +1,5 @@
 from .general.readOBJ import readOBJ
+from .general.readPLY import readPLY
 from .general.writeOBJ import writeOBJ
 from .general.edges_with_mapping import edges_with_mapping
 from .general.edges import edges
