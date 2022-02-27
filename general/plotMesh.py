@@ -4,7 +4,7 @@ import numpy as np
 
 from ..differentiable.face_normals import face_normals
 
-def plotMesh(V,F, \
+def plotMesh(V,F,\
     showEdges=False,\
     alpha=0.8):
     """

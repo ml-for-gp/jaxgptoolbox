@@ -30,3 +30,4 @@ from .differentiable.angle_defect import angle_defect_intrinsic
 from .differentiable.ramp_smooth import ramp_smooth
 
 from .external.signed_distance import signed_distance
+from .external.read_mesh import read_mesh
