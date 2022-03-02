@@ -1,5 +1,7 @@
 import jax.numpy as np
+from jax import jit
 
+@jit
 def dotrow(X,Y):    
 	'''
 	DOTROW computes the row-wise dot product of the rows of two matrices

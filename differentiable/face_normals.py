@@ -1,6 +1,8 @@
 import jax.numpy as np
 from .normalizerow import normalizerow
+from jax import jit
 
+@jit
 def face_normals(V, F):    
 	'''
 	FACENORMALS computes unit face normal of a triangle mesh

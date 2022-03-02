@@ -1,6 +1,8 @@
 import jax.numpy as np
 from .dotrow import dotrow
+from jax import jit
 
+@jit
 def normrow(X):
 	"""
 	NORMROW computes the l2-norm of each row in a np array 

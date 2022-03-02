@@ -1,5 +1,7 @@
 import jax.numpy as np 
+from jax import jit
 
+@jit
 def normalize_unit_box(V, margin = 0.0):
   """
 	NORMALIZE_UNIT_BOX normalize a set of points to a unit bounding box with a user-specified margin 

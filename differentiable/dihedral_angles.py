@@ -2,7 +2,9 @@ import jax.numpy as np
 from .face_normals import face_normals
 from .dotrow import dotrow
 from ..general.adjacency_list_edge_face import adjacency_list_edge_face
+from jax import jit
 
+# TODO: these are not abel to @jit yet
 def dihedral_angles(V, F):    
 	'''
 	DIHEDRAL_ANGLES computes the dihedral angles of a mesh
@@ -20,7 +22,6 @@ def dihedral_angles(V, F):
 	FN = face_normals(V,F)
 	E2F, E = adjacency_list_edge_face(F)
 	return dihedral_angles_from_normals(FN,E2F), E
-
 
 def dihedral_angles_from_normals(N, E2F):    
 	'''

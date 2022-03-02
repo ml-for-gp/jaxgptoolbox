@@ -1,5 +1,7 @@
 import jax.numpy as np
+from jax import jit
 
+@jit
 def face_areas(V, F):
     """
     FACEAREAS computes area per face 

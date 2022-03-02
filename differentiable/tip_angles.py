@@ -1,6 +1,8 @@
 import jax.numpy as np
+from jax import jit
 from .halfedge_lengths import halfedge_lengths_squared
 
+@jit
 def tip_angles(V, F):    
 	'''
 	TIP_ANGLES computes the tip angles of a mesh (the angle at every corner)

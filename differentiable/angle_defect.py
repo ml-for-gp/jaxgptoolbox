@@ -1,7 +1,9 @@
 import jax.numpy as np
 from .tip_angles import tip_angles
 from ..general.boundary_vertices import boundary_vertices
+from jax import jit
 
+# TODO: these are not abel to @jit yet
 def angle_defect(V,F,b=None,n=None):    
 	'''
 	ANGLE_DEFECT computes the angle defect (integrated Gauss curvature) at each
@@ -39,7 +41,6 @@ def angle_defect(V,F,b=None,n=None):
 	# 	k = np.concatenate((k,np.zeros(nv-nk)))
 
 	return k
-
 
 def angle_defect_intrinsic(F,A,b=np.empty(0,dtype=int),n=None):    
 	'''

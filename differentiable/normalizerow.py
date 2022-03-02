@@ -1,6 +1,8 @@
 import jax.numpy as np
 from .normrow import normrow
+from jax import jit
 
+@jit
 def normalizerow(X):
 	"""
 	NORMALIZEROW normalizes the l2-norm of each row in a np array 

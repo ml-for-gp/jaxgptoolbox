@@ -1,6 +1,8 @@
 import jax.numpy as np
 from .dotrow import dotrow
+from jax import jit
 
+@jit
 def halfedge_lengths(V, F):    
 	'''
 	HALFEDGE_LENGTHS computes the lengths of all halfedges in the mesh
@@ -18,7 +20,7 @@ def halfedge_lengths(V, F):
 
 	return np.sqrt(halfedge_lengths_squared(V,F))
 
-
+@jit
 def halfedge_lengths_squared(V, F):    
 	'''
 	HALFEDGE_LENGTHS_SQUARED computes the lengths of all halfedges in the mesh,

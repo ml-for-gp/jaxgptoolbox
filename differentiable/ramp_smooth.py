@@ -1,5 +1,7 @@
 import jax.numpy as np
+from jax import jit
 
+@jit
 def ramp_smooth(d, d0 = 1.0):
     """
     RAMP function so that: 
