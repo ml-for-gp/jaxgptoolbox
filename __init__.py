@@ -23,6 +23,7 @@ from .differentiable.dihedral_angles import dihedral_angles_from_normals
 from .differentiable.dotrow import dotrow
 from .differentiable.face_areas import face_areas
 from .differentiable.face_normals import face_normals
+from .differentiable.fit_rotations_cayley import fit_rotations_cayley
 from .differentiable.halfedge_lengths import halfedge_lengths
 from .differentiable.halfedge_lengths import halfedge_lengths_squared
 from .differentiable.normalize_unit_box import normalize_unit_box
