@@ -5,8 +5,6 @@ import jaxgptoolbox as jgp
 from jaxgptoolbox.differentiable.normalizerow import normalizerow
 from jaxgptoolbox.differentiable.fit_rotations_cayley import fit_rotations_cayley
 import numpy.matlib as matlib
-import scipy
-import scipy.sparse 
 
 import jax
 import jax.numpy as np
@@ -14,8 +12,8 @@ from jax import jit, value_and_grad
 from jax.example_libraries import optimizers
 
 import numpy as onp
-import pickle
 import tqdm
+import matplotlib.pyplot as plt
 
 def spokes_rims(V,F):
     """
@@ -137,5 +135,9 @@ if __name__ == "__main__":
     U = get_params(opt_state)
     jgp.writeOBJ("opt.obj", U,F)
 
+    plt.semilogy(loss_history)
+    plt.title('normal driven energy')
+    plt.grid()
+    plt.savefig("loss_history.jpg")
 
 
