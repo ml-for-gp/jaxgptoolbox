@@ -115,7 +115,6 @@ if __name__ == "__main__":
     VA = jgp.vertex_areas(V,F)
     Ek_all, Wk_all = spokes_rims(V,F)
     tar_N = compute_target_normals(N)
-    data = [V,F,N,tar_N,VA,Ek_all,Wk_all]
 
     U = V.copy()
     lam = 1.0
