@@ -2,9 +2,7 @@ import sys
 sys.path.append('../../../')
 import jaxgptoolbox as jgp
 
-from jaxgptoolbox.differentiable.normalizerow import normalizerow
 from jaxgptoolbox.differentiable.fit_rotations_cayley import fit_rotations_cayley
-import numpy.matlib as matlib
 
 import jax
 import jax.numpy as np
