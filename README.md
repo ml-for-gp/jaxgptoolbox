@@ -1,3 +1,7 @@
+<p align="center">
+  <img height="400" src="logo.png" style="margin-bottom:-100px">
+</p>
+
 # jaxgptoolbox
 
 This is a collection of basic geometry processing functions, constructed to work with [jax](https://github.com/google/jax)'s autodifferentiation feature for applications in machine learning. We split these functions into _not differentiable_ ones in the `general` folder, and differentiable ones in the `differentiable` folder. We also include some wrappers of third party functions in the `external` folder for convenience. To use these utility functions, one can simply import this package and use it as
