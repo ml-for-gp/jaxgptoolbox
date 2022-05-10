@@ -1,5 +1,5 @@
 <p align="center">
-  <img height="400" src="logo.png" style="margin-bottom:-100px">
+  <img width="40%" src="logo.png" style="margin-bottom:-100px">
 </p>
 
 # jaxgptoolbox
