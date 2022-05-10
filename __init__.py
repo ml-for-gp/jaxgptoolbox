@@ -4,14 +4,15 @@ from .general.boundary_vertices import boundary_vertices
 from .general.edges import edges
 from .general.edge_flaps import edge_flaps
 from .general.edges_with_mapping import edges_with_mapping
+from .general.face_face_adjacency_list import face_face_adjacency_list
 from .general.find_index import find_index
 from .general.he_initialization import he_initialization
 from .general.knn_search import knn_search
 from .general.massmatrix import massmatrix
 from .general.outline import outline
-from .general.plotMesh import plotMesh
+# from .general.plotMesh import plotMesh
 from .general.sample_2D_grid import sample_2D_grid
-from .general.scatter3 import scatter3
+# from .general.scatter3 import scatter3
 from .general.vertex_face_adjacency_list import vertex_face_adjacency_list
 from .general.writeOBJ import writeOBJ
 
@@ -34,7 +35,6 @@ from .differentiable.tip_angles import tip_angles
 from .differentiable.tip_angles import tip_angles_intrinsic
 from .differentiable.vertex_areas import vertex_areas
 from .differentiable.vertex_normals import vertex_normals
-
 
 from .external.signed_distance import signed_distance
 from .external.read_mesh import read_mesh

@@ -2,8 +2,6 @@ import sys
 sys.path.append('../../../')
 import jaxgptoolbox as jgp
 
-from jaxgptoolbox.differentiable.fit_rotations_cayley import fit_rotations_cayley
-
 import jax
 import jax.numpy as np
 from jax import jit, value_and_grad
@@ -12,6 +10,7 @@ from jax.example_libraries import optimizers
 import numpy as onp
 import tqdm
 import matplotlib.pyplot as plt
+import polyscope as ps
 
 def spokes_rims(V,F):
     """
@@ -81,7 +80,7 @@ def normal_driven_energy_single(U,V,lam,n,tar_n,a,E,W):
     S = (dV * W).dot(dU.T) + lam*a*n[:,None].dot(tar_n[None,:])
 
     # fit rotation
-    R = fit_rotations_cayley(S)
+    R = jgp.fit_rotations_cayley(S)
 
     # compute loss
     RdV_dU = R.dot(dV) - dU
@@ -136,5 +135,12 @@ if __name__ == "__main__":
     plt.title('normal driven energy')
     plt.grid()
     plt.savefig("loss_history.jpg")
+
+    ps.init()
+    ps.register_surface_mesh('input mesh',V,F)
+    ps.register_surface_mesh('optimized mesh',U,F)
+    ps.show()
+
+
 
 
