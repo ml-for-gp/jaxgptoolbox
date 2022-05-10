@@ -11,6 +11,10 @@ from .general.knn_search import knn_search
 from .general.massmatrix import massmatrix
 from .general.outline import outline
 from .general.sample_2D_grid import sample_2D_grid
+from .general.sdf_circle import sdf_circle
+from .general.sdf_cross import sdf_cross
+from .general.sdf_star import sdf_star
+from .general.sdf_triangle import sdf_triangle
 from .general.vertex_face_adjacency_list import vertex_face_adjacency_list
 
 from .differentiable.angle_defect import angle_defect

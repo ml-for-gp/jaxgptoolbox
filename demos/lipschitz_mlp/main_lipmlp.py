@@ -1,4 +1,4 @@
-from utils import *
+from model import *
 
 # implementation of "Learning Smooth Neural Functions via Lipschitz Regularization" by Liu et al. 2022
 if __name__ == '__main__':
@@ -46,8 +46,8 @@ if __name__ == '__main__':
   for epoch in pbar:
     # sample a bunch of random points
     x = np.array(random.rand(hyper_params["samples_per_epoch"], hyper_params["dim_in"]))
-    y0 = star_sdf(x)
-    y1 = circle_sdf(x)
+    y0 = jgp.sdf_star(x)
+    y1 = jgp.sdf_circle(x)
 
     # update
     loss_value, opt_state = update(epoch, opt_state, alpha, x, y0, y1)
