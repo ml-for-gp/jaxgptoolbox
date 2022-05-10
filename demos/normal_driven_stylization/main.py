@@ -129,7 +129,7 @@ if __name__ == "__main__":
         pbar.set_postfix({"loss": loss_value})
 
     U = get_params(opt_state)
-    jgp.writeOBJ("opt.obj", U,F)
+    jgp.write_obj("opt.obj", U,F)
 
     plt.semilogy(loss_history)
     plt.title('normal driven energy')

@@ -10,11 +10,8 @@ from .general.he_initialization import he_initialization
 from .general.knn_search import knn_search
 from .general.massmatrix import massmatrix
 from .general.outline import outline
-# from .general.plotMesh import plotMesh
 from .general.sample_2D_grid import sample_2D_grid
-# from .general.scatter3 import scatter3
 from .general.vertex_face_adjacency_list import vertex_face_adjacency_list
-from .general.writeOBJ import writeOBJ
 
 from .differentiable.angle_defect import angle_defect
 from .differentiable.angle_defect import angle_defect_intrinsic
@@ -38,3 +35,4 @@ from .differentiable.vertex_normals import vertex_normals
 
 from .external.signed_distance import signed_distance
 from .external.read_mesh import read_mesh
+from .external.write_obj import write_obj
