@@ -1,6 +1,7 @@
 unit_test
 not_ready
 old
+demos/shapeup_with_GD
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

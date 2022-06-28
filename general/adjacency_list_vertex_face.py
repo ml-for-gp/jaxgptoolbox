@@ -1,6 +1,6 @@
 import numpy as onp
 
-def vertex_face_adjacency_list(F):
+def adjacency_list_vertex_face(F):
     """
     build a vertex-face adjacency list such that V2F[vertex_index] = [adjacent_face_indices]
 

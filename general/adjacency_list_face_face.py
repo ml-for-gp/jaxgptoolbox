@@ -1,7 +1,7 @@
 import numpy as onp
 from scipy.sparse import coo_matrix
 
-def face_face_adjacency_list(F):
+def adjacency_list_face_face(F):
     """
     build a face-face adjacency list such that F2F[face_index] = [adjacent_face_indices]. Note that neighboring faces are determined by whether two faces share an edge.
 
