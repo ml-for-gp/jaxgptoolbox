@@ -21,13 +21,13 @@ class mlp:
   
   def initialize_weights(self):
     """
-    Initialize the parameters of the Lipschitz mlp
+    Initialize the parameters of the mlp
 
     Inputs
     hyperParams: hyper parameter dictionary
 
     Outputs
-    params_net: parameters of the network (weight, bias, initial lipschitz bound)
+    params_net: parameters of the network (weight, bias) as a list of jax.numpy arrays
     """
     def init_W(size_out, size_in): 
         W = onp.random.randn(size_out, size_in) * onp.sqrt(2 / size_in)
@@ -44,15 +44,15 @@ class mlp:
 
   def forward_single(self, params_net, t, x):
     """
-    Forward pass of a lipschitz MLP
+    Forward pass of a MLP
     
     Inputs
     params_net: parameters of the network
-    t: the input feature of the shape
+    t: the latent code of the shape
     x: a query location in the space
 
     Outputs
-    out: implicit function value at x
+    out: implicit function value at x (signed distance in this case)
     """
     # concatenate coordinate and latent code
     x = np.append(x, t)
@@ -66,4 +66,6 @@ class mlp:
     W, b = params_net[-1]
     out = np.dot(W, x) + b
     return out[0]
+    
+  # vectorize the "forward_single" function
   forward = jax.vmap(forward_single, in_axes=(None, None, None, 0), out_axes=0)

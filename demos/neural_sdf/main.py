@@ -39,14 +39,14 @@ if __name__ == '__main__':
 
   # training
   loss_history = onp.zeros(hyper_params["num_epochs"])
-  pbar = tqdm.tqdm(range(hyper_params["num_epochs"]))
+  pbar = tqdm.tqdm(range(hyper_params["num_epochs"])) # progress bar
   for epoch in pbar:
     # sample a bunch of random points
     x = np.array(random.rand(hyper_params["samples_per_epoch"], hyper_params["dim_in"]))
-    y0 = jgp.sdf_star(x)
-    y1 = jgp.sdf_circle(x)
+    y0 = jgp.sdf_star(x) # target SDF values at x
+    y1 = jgp.sdf_circle(x) # target SDF values at x
 
-    # update
+    # update network parameters
     loss_value, opt_state = update(epoch, opt_state, x, y0, y1)
     loss_history[epoch] = loss_value
     pbar.set_postfix({"loss": loss_value})
@@ -64,10 +64,8 @@ if __name__ == '__main__':
   with open("mlp_params.pkl", 'wb') as handle:
     pickle.dump(params, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-  # save result as a video
+  # save result as a video (optional)
   sdf_cm = mpl.colors.LinearSegmentedColormap.from_list('SDF', [(0,'#eff3ff'),(0.5,'#3182bd'),(0.5,'#31a354'),(1,'#e5f5e0')], N=256)
-
-  # create video
   fig = plt.figure()
   x = jgp.sample_2D_grid(hyper_params["grid_size"]) # sample on unit grid for visualization
   def animate(t):
