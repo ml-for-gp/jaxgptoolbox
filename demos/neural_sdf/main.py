@@ -64,17 +64,35 @@ if __name__ == '__main__':
   with open("mlp_params.pkl", 'wb') as handle:
     pickle.dump(params, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
-  # save result as a video (optional)
-  sdf_cm = mpl.colors.LinearSegmentedColormap.from_list('SDF', [(0,'#eff3ff'),(0.5,'#3182bd'),(0.5,'#31a354'),(1,'#e5f5e0')], N=256)
-  fig = plt.figure()
+  # save results
+  sdf_cm = mpl.colors.LinearSegmentedColormap.from_list('SDF', [(0,'#eff3ff'),(0.5,'#3182bd'),(0.5,'#31a354'),(1,'#e5f5e0')], N=256) # color map
+  levels = onp.linspace(-0.5, 0.5, 21) # isoline
   x = jgp.sample_2D_grid(hyper_params["grid_size"]) # sample on unit grid for visualization
-  def animate(t):
-      plt.cla()
-      out = model.forward(params, np.array([t]), x)
-      levels = onp.linspace(-0.5, 0.5, 21)
-      im = plt.contourf(out.reshape(hyper_params['grid_size'],hyper_params['grid_size']), levels = levels, cmap=sdf_cm)
-      plt.axis('equal')
-      plt.axis("off")
-      return im
-  anim = animation.FuncAnimation(fig, animate, frames=np.linspace(0, 1, 50), interval=50)
-  anim.save("mlp_interpolation.mp4")
+
+  fig = plt.figure()
+  y0 = jgp.sdf_star(x)
+  im = plt.contourf(y0.reshape(hyper_params['grid_size'],hyper_params['grid_size']), levels = levels, cmap=sdf_cm)
+  plt.axis('equal')
+  plt.axis("off")
+  plt.savefig('ground truth (t=0)')
+
+  plt.clf()
+  y0_pred = model.forward(params, np.array([0.0]), x)
+  im = plt.contourf(y0_pred.reshape(hyper_params['grid_size'],hyper_params['grid_size']), levels = levels, cmap=sdf_cm)
+  plt.axis('equal')
+  plt.axis("off")
+  plt.savefig('network output (t=0)')
+
+  plt.clf()
+  y1 = jgp.sdf_circle(x)
+  im = plt.contourf(y1.reshape(hyper_params['grid_size'],hyper_params['grid_size']), levels = levels, cmap=sdf_cm)
+  plt.axis('equal')
+  plt.axis("off")
+  plt.savefig('ground truth (t=1)')
+
+  plt.clf()
+  y1_pred = model.forward(params, np.array([1.0]), x)
+  im = plt.contourf(y1_pred.reshape(hyper_params['grid_size'],hyper_params['grid_size']), levels = levels, cmap=sdf_cm)
+  plt.axis('equal')
+  plt.axis("off")
+  plt.savefig('network output (t=1)')
