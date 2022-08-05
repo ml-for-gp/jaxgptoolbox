@@ -45,7 +45,7 @@ class lipmlp:
 
   def weight_normalization(self, W, softplus_c):
     """
-    Lipschitz weight normalization based on the L-infinity norm (see Eq.9 in [Liu et al 2022])
+    Lipschitz weight normalization based on the L-infinity norm
     """
     absrowsum = np.sum(np.abs(W), axis=1)
     scale = np.minimum(1.0, softplus_c/absrowsum)
@@ -81,7 +81,7 @@ class lipmlp:
 
   def get_lipschitz_loss(self, params_net):
     """
-    This function computes the Lipschitz regularization Eq.7 in the [Liu et al 2022] 
+    This function computes the Lipschitz regularization
     """
     loss_lip = 1.0
     for ii in range(len(params_net)):
